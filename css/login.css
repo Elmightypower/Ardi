@@ -1,0 +1,248 @@
+/* 
+	Salut les mecs, soyez prets!! On va construire un tres beau site pour le CMR...
+	Rappellez-vous, c'est votre pote Senga, le mignon mec du net 😍
+	Alors, vous attendez quoi? Allons-y ! 😎
+*/
+
+/* Impportons les polices essentielles au projet */
+@font-face {
+	font-family: "Montserrat";
+	src: url("../Fonts/Montserrat-Light.ttf") format("truetype");
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: "Montserrat";
+	src: url("../Fonts/Montserrat-Regular.ttf") format("truetype");
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: "Montserrat";
+	src: url("../Fonts/Montserrat-Bold.ttf") format("truetype");
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: "Montserrat";
+	src: url("../Fonts/Montserrat-Black.ttf") format("truetype");
+	font-weight: 900;
+}
+
+/* LES STYLES GLOBAUX */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: "Montserrat", sans-serif;
+	font-size: 15px;
+	font-weight: 300;
+	color: rgba(7, 30, 46, 0.8);
+	background: whitesmoke;
+	overflow-x: hidden;
+	width: 100%;
+	height: 100%;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+	box-shadow: none !important;
+}
+
+input,
+button,
+textarea,
+select {
+	font-weight: 300;
+	font-family: "Montserrat", sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+.wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.wrapper .img {
+	width: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	background: linear-gradient(
+			45deg,
+			rgba(14, 66, 85, 0.8),
+			rgba(14, 66, 85, 0.8),
+			rgba(40, 100, 102, 0.78)
+		),
+		center center / cover url("../img/bg-2.jpg") fixed;
+	color: whitesmoke;
+}
+
+.wrapper .img .content {
+	width: 70%;
+}
+
+.img h2 {
+	margin-bottom: 0.8rem;
+	font-size: 2rem;
+}
+
+.img a.link {
+	color: #00a7e3;
+	transition: 0.3s ease;
+}
+
+.img a.link:hover {
+	opacity: 0.7;
+}
+
+.wrapper .text {
+	width: 50%;
+	padding: 5% 10%;
+	background: none;
+}
+
+.text form {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	padding: 3.5rem 2rem;
+	border-radius: 20px;
+}
+
+img.avatar {
+	width: 100px;
+	margin: 0 auto 16px auto;
+}
+
+.input-div {
+	position: relative;
+	width: 100%;
+	height: 35px;
+	margin-bottom: 25px;
+	display: flex;
+	align-items: center;
+	border-bottom: 2px solid rgb(211, 211, 211);
+}
+
+.input-div.textarea {
+	/* margin: 30px 0; */
+	height: unset;
+}
+
+.input-div::before,
+.input-div::after {
+	content: "";
+	position: absolute;
+	width: 0;
+	bottom: -2px;
+	height: 2px;
+	background: #00a7e3;
+	transition: 0.3s ease;
+}
+
+.input-div::before {
+	left: 0;
+}
+
+.input-div::after {
+	right: 0;
+}
+
+.input-div.focus::before,
+.input-div.focus::after {
+	width: 50%;
+}
+
+.input-div input,
+textarea {
+	width: 100%;
+	background: none;
+	border: none;
+	outline: none;
+	color: inherit;
+	padding: 10px;
+	font-family: "Montserrat";
+	font-weight: 300;
+}
+
+.input-div .placeholder {
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: rgba(177, 177, 177, 0.801);
+	z-index: -1;
+	transition: 0.3s ease;
+}
+
+.input-div.focus .placeholder {
+	top: -5px;
+	font-size: 0.8rem;
+	left: 0;
+}
+
+.input-div.focus .placeholder.textarea {
+	top: -2px;
+}
+
+.btn-core {
+	background: linear-gradient(45deg, #00a7e3, #00a7e3, #1ecbd1);
+	padding: 8px 20px;
+	margin: 0 3px;
+	border: none;
+	border-radius: 20px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+	color: whitesmoke;
+	outline: none !important;
+	font-weight: 300;
+	transition: 0.3s ease;
+	cursor: pointer;
+}
+
+.btn-core:hover {
+	color: whitesmoke;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+	padding: 8px 20px;
+	letter-spacing: 1.15px;
+}
+
+@media screen and (max-width: 750px) {
+	.wrapper .text {
+		width: 100%;
+		min-height: 100vh;
+		padding: 5%;
+	}
+
+	.wrapper .text form {
+		margin-top: 120px;
+	}
+	.wrapper .img {
+		width: 0%;
+	}
+	.wrapper .img .content {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: 20px 15px;
+		color: rgba(7, 30, 46, 0.8);
+	}
+}
+
+
+@media screen and (max-width: 300px) {
+	.wrapper .text form {
+		margin-top: 180px;
+	}
+}
